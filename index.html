@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Top Jogos Favoritos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Hero Mobile-First -->
+  <header class="hero">
+    <div class="glow-orb"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">Top Jogos Favoritos</h1>
+      <p class="hero-subtitle">Os títulos que marcaram época, dominaram madrugadas competitivas e o clássico charme da era de ouro.</p>
+    </div>
+  </header>
+
+  <!-- Filtros / Categorias rápidas -->
+  <main class="container">
+    <nav class="quick-nav" aria-label="Atalhos de jogos">
+      <button class="nav-chip active" data-target="all">Todos</button>
+      <button class="nav-chip" data-target="cod">CoD MW4</button>
+      <button class="nav-chip" data-target="lol">League of Legends</button>
+      <button class="nav-chip" data-target="short-hike">A Short Hike</button>
+      <button class="nav-chip" data-target="hyper-light">Hyper Light Drifter</button>
+      <button class="nav-chip" data-target="terror">Terror</button>
+    </nav>
+
+    <!-- Cards dos Jogos -->
+    <section class="games-grid" id="gamesList">
+      
+      <!-- Call of Duty: Modern Warfare 4 (2026) -->
+      <article class="game-card card-cod" data-game="cod">
+        <div class="card-rank">#1</div>
+        <div class="card-media">
+          <iframe 
+            class="game-video" 
+            src="https://www.youtube-nocookie.com/embed/jLbst85USN8" 
+            title="Call of Duty: Modern Warfare 4 (2026) Official Reveal Trailer" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+          <span class="tag tag-fps">FPS / Tático</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="platform">PC / Consoles</span>
+            <span class="rating">⭐ 9.8</span>
+          </div>
+          <h2 class="card-title">Call of Duty: Modern Warfare 4 (2026)</h2>
+          <p class="card-desc">sei que tem coisa melhor, mas é onde desestresso atualmente</p>
+          
+          <div class="highlights">
+            <div class="highlight-item">
+              <span class="highlight-label">Estilo</span>
+              <span class="highlight-val">Competitivo & Tático</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-label">Foco</span>
+              <span class="highlight-val">atirar</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- League of Legends -->
+      <article class="game-card card-lol" data-game="lol">
+        <div class="card-rank">#2</div>
+        <div class="card-media">
+          <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jhin_2.jpg" alt="League of Legends - Arte Jhin Lua Sangrenta" loading="lazy" class="game-img">
+          <div class="card-gradient"></div>
+          <span class="tag tag-moba">MOBA / Estratégia</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="platform">PC</span>
+            <span class="rating">⭐ 9.5</span>
+          </div>
+          <h2 class="card-title">League of Legends</h2>
+          <p class="card-desc">sem comentários</p>
+          
+          <div class="highlights">
+            <div class="highlight-item">
+              <span class="highlight-label">Estilo</span>
+              <span class="highlight-val">Tático & Teamplay</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-label">Sensação</span>
+              <span class="highlight-val">dependendo do boneco, parece que estou compondo</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- A Short Hike -->
+      <article class="game-card card-indie" data-game="short-hike">
+        <div class="card-rank">#3</div>
+        <div class="card-media">
+          <iframe 
+            class="game-video" 
+            src="https://www.youtube-nocookie.com/embed/TM1Pcd-0qJg" 
+            title="A Short Hike - Official Trailer" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+          <span class="tag tag-retro">Indie / Aventura</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="platform">PC / Switch / Consoles</span>
+            <span class="rating">⭐ 10.0</span>
+          </div>
+          <h2 class="card-title">A Short Hike</h2>
+          <p class="card-desc">jogo lindo que guardo no meu coração pra sempre</p>
+          
+          <div class="highlights">
+            <div class="highlight-item">
+              <span class="highlight-label">Estilo</span>
+              <span class="highlight-val">Exploração Relaxante</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-label">Destaque</span>
+              <span class="highlight-val">chorar até dizer chega, mas tem pescaria e tem como voar também</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hyper Light Drifter -->
+      <article class="game-card card-hyper" data-game="hyper-light">
+        <div class="card-rank">#4</div>
+        <div class="card-media">
+          <iframe 
+            class="game-video" 
+            src="https://www.youtube-nocookie.com/embed/nWufEJ1Ava0" 
+            title="Hyper Light Drifter - Official Trailer" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+          <span class="tag tag-action">Action RPG / Indie</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="platform">PC / Switch / Consoles</span>
+            <span class="rating">⭐ 9.9</span>
+          </div>
+          <h2 class="card-title">Hyper Light Drifter</h2>
+          <p class="card-desc">tenho um certo apego por já ter jogado há bastante tempo</p>
+          
+          <div class="highlights">
+            <div class="highlight-item">
+              <span class="highlight-label">Estilo</span>
+              <span class="highlight-val">Fast-paced Action RPG</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-label">Destaque</span>
+              <span class="highlight-val">tem graficos muito bonitinhos e história marcante sem dizer uma palavra</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ==============================================
+           SEPARADOR DA CATEGORIA TERROR
+           ============================================== -->
+      <div class="category-divider" data-game="terror">
+        <h2 class="category-heading">Terror</h2>
+      </div>
+
+      <!-- Resident Evil 7: Biohazard -->
+      <article class="game-card card-terror" data-game="terror">
+        <div class="card-rank">#5</div>
+        <div class="card-media">
+          <iframe 
+            class="game-video" 
+            src="https://www.youtube-nocookie.com/embed/viyqPAziAaw" 
+            title="Resident Evil 7: Biohazard - Trailer Oficial" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+          <span class="tag tag-terror">Survival Horror</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="platform">PC / Consoles</span>
+            <span class="rating">⭐ 9.6</span>
+          </div>
+          <h2 class="card-title">Resident Evil 7: Biohazard</h2>
+          <p class="card-desc">história boa, terror bom, tudo bom,</p>
+          
+          <div class="highlights">
+            <div class="highlight-item">
+              <span class="highlight-label">Estilo</span>
+              <span class="highlight-val">Terror em 1ª Pessoa</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-label">Sensação</span>
+              <span class="highlight-val">Tensão Claustrofóbica</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Resident Evil Village (8) -->
+      <article class="game-card card-terror" data-game="terror">
+        <div class="card-rank">#6</div>
+        <div class="card-media">
+          <iframe 
+            class="game-video" 
+            src="https://www.youtube-nocookie.com/embed/dRpXEc-EJow" 
+            title="Resident Evil Village (8) - Trailer Oficial" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+          <span class="tag tag-terror">Horror Gótico</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="platform">PC / Consoles</span>
+            <span class="rating">⭐ 9.5</span>
+          </div>
+          <h2 class="card-title">Resident Evil Village (8)</h2>
+          <p class="card-desc">o mesmo do 7</p>
+          
+          <div class="highlights">
+            <div class="highlight-item">
+              <span class="highlight-label">Estilo</span>
+              <span class="highlight-val">Ação & Horror Gótico</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-label">Destaque</span>
+              <span class="highlight-val">Castelo Dimitrescu & Beneviento</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dead Space II -->
+      <article class="game-card card-terror" data-game="terror">
+        <div class="card-rank">#7</div>
+        <div class="card-media">
+          <iframe 
+            class="game-video" 
+            src="https://www.youtube-nocookie.com/embed/78nh3xFwAEU" 
+            title="Dead Space 2 - Trailer Oficial" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+          <span class="tag tag-terror">Sci-Fi Horror</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="platform">PC / Consoles</span>
+            <span class="rating">⭐ 9.8</span>
+          </div>
+          <h2 class="card-title">Dead Space II</h2>
+          <p class="card-desc">cinema em relação a jogos de terror</p>
+          
+          <div class="highlights">
+            <div class="highlight-item">
+              <span class="highlight-label">Estilo</span>
+              <span class="highlight-val">Terror Espacial & Ação</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-label">Momento</span>
+              <span class="highlight-val">A agulha no olho & Necromorphs</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Layers of Fear 2 -->
+      <article class="game-card card-terror" data-game="terror">
+        <div class="card-rank">#8</div>
+        <div class="card-media">
+          <iframe 
+            class="game-video" 
+            src="https://www.youtube-nocookie.com/embed/UeMtj6CuXPE" 
+            title="Layers of Fear 2 - Trailer Oficial" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+          <span class="tag tag-terror">Terror Psicológico</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="platform">PC / Consoles</span>
+            <span class="rating">⭐ 9.0</span>
+          </div>
+          <h2 class="card-title">Layers of Fear 2</h2>
+          <p class="card-desc">cinema com arte com terror</p>
+          
+          <div class="highlights">
+            <div class="highlight-item">
+              <span class="highlight-label">Estilo</span>
+              <span class="highlight-val">Terror Psicológico</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-label">Destaque</span>
+              <span class="highlight-val">Ambientes em Metamorfose</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>sim eu não tinha muito o que fazer</p>
+    <p class="entertainment-cta">
+      procurando uma categoria de Filmes, séries e animes? 
+      <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="whatsapp-link">Clique aqui</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
