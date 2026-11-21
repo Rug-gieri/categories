@@ -143,8 +143,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (playIndicator) {
       playIndicator.addEventListener('click', playVideo);
     }
-    if (soundBtn) {
-      soundBtn.addEventListener('click', playVideo);
+
+    // Botão Expandir / Tela Cheia
+    const fullscreenBtn = card.querySelector('.fullscreen-btn');
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playVideo();
+        const mediaBox = card.querySelector('.reel-media-box');
+        if (!mediaBox) return;
+
+        if (!document.fullscreenElement) {
+          if (mediaBox.requestFullscreen) {
+            mediaBox.requestFullscreen();
+          } else if (mediaBox.webkitRequestFullscreen) {
+            mediaBox.webkitRequestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+        }
+      });
     }
 
     // Função para alterar velocidade
