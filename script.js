@@ -5,6 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterChips = document.querySelectorAll('.reel-chip');
   const backToTopBtn = document.getElementById('backToTopBtn');
 
+  // 0. Modal de Aviso / Onboarding ("Sem julgamentos 🫡")
+  const welcomeModal = document.getElementById('welcomeModal');
+  const startReelsBtn = document.getElementById('startReelsBtn');
+
+  if (startReelsBtn && welcomeModal) {
+    startReelsBtn.addEventListener('click', () => {
+      welcomeModal.classList.add('closed');
+      // Opcional: tocar o primeiro vídeo automaticamente após o clique do usuário
+      const firstCard = cards[0];
+      if (firstCard) {
+        const playBtn = firstCard.querySelector('.play-indicator');
+        if (playBtn) playBtn.click();
+      }
+    });
+  }
+
   // Mapa de instâncias dos players do YouTube
   const players = {};
 
