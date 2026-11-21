@@ -8,17 +8,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // 0. Modal de Aviso / Onboarding ("Sem julgamentos 🫡")
   const welcomeModal = document.getElementById('welcomeModal');
   const startReelsBtn = document.getElementById('startReelsBtn');
+  const onboardingToast = document.getElementById('feedOnboardingToast');
+  let hasShownScrollToast = false;
 
   if (startReelsBtn && welcomeModal) {
     startReelsBtn.addEventListener('click', () => {
       welcomeModal.classList.add('closed');
-      // Opcional: tocar o primeiro vídeo automaticamente após o clique do usuário
       const firstCard = cards[0];
       if (firstCard) {
         const playBtn = firstCard.querySelector('.play-indicator');
         if (playBtn) playBtn.click();
       }
     });
+  }
+
+  // Dispara o onboarding do 2X no primeiro scroll do feed
+  if (feed && onboardingToast) {
+    feed.addEventListener('scroll', () => {
+      if (!hasShownScrollToast && feed.scrollTop > 40) {
+        hasShownScrollToast = true;
+        onboardingToast.classList.add('show');
+        setTimeout(() => {
+          onboardingToast.classList.remove('show');
+        }, 4000);
+      }
+    }, { passive: true });
   }
 
   // Mapa de instâncias dos players do YouTube

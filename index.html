@@ -12,33 +12,32 @@
 </head>
 <body class="reels-mode">
 
-  <!-- Modal de Aviso / Onboarding Antes de Entrar -->
+  <!-- Modal de Aviso Antes de Entrar -->
   <div class="welcome-modal-backdrop" id="welcomeModal">
     <div class="welcome-modal-card">
       <div class="modal-icon-badge">🫡</div>
       <h2 class="modal-title">Sem julgamentos</h2>
       <p class="modal-subtitle">Gosto pessoal não se discute, se aprecia (ou não).</p>
-
-      <!-- Instrução Visual de Onboarding (Segurar para 2X) -->
-      <div class="onboarding-tip">
-        <div class="tip-hand-animation">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hand-icon">
-            <path d="M18 11V6a2 2 0 0 0-4 0v5"/>
-            <path d="M14 10V4a2 2 0 0 0-4 0v7"/>
-            <path d="M10 10.5V6a2 2 0 0 0-4 0v8"/>
-            <path d="M18 8a2 2 0 0 1 4 4v4a8 8 0 0 1-16 0v-2"/>
-          </svg>
-          <div class="touch-pulse"></div>
-        </div>
-        <div class="tip-text">
-          <strong>Segure na lateral</strong>
-          <span>para avançar o trailer em <strong>2X</strong></span>
-        </div>
-      </div>
-
       <button type="button" class="modal-start-btn" id="startReelsBtn">
         Bora ver 🎮
       </button>
+    </div>
+  </div>
+
+  <!-- Toast Onboarding Flutuante (Aparece ao começar a rolar o feed) -->
+  <div class="feed-onboarding-toast" id="feedOnboardingToast">
+    <div class="tip-hand-animation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hand-icon">
+        <path d="M18 11V6a2 2 0 0 0-4 0v5"/>
+        <path d="M14 10V4a2 2 0 0 0-4 0v7"/>
+        <path d="M10 10.5V6a2 2 0 0 0-4 0v8"/>
+        <path d="M18 8a2 2 0 0 1 4 4v4a8 8 0 0 1-16 0v-2"/>
+      </svg>
+      <div class="touch-pulse"></div>
+    </div>
+    <div class="tip-text">
+      <strong>Dica: Segure na lateral</strong>
+      <span>para acelerar em <strong>2X</strong></span>
     </div>
   </div>
 
