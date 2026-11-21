@@ -80,11 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
           videoId: videoId,
           playerVars: {
             autoplay: 1,
-            controls: 1,
+            controls: 0,
             rel: 0,
             modestbranding: 1,
             playsinline: 1,
-            cc_load_policy: 1
+            disablekb: 1,
+            fs: 0,
+            iv_load_policy: 3
           },
           events: {
             onReady: (event) => {
@@ -98,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <iframe 
             id="${playerId}"
             class="game-video"
-            src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=1&enablejsapi=1&playsinline=1&cc_load_policy=1" 
+            src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&fs=0&iv_load_policy=3&enablejsapi=1" 
             title="Trailer" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
