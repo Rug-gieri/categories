@@ -39,22 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Alternador de vídeos em cards com tabs (Indie / Terror)
-  document.querySelectorAll('.game-card').forEach(card => {
-    const tabs = card.querySelectorAll('.video-tab-btn');
-    const iframe = card.querySelector('iframe.game-video');
+  // Otimização de Performance: Carregamento do YouTube sob demanda (Facade)
+  document.querySelectorAll('.video-facade').forEach(facade => {
+    facade.addEventListener('click', () => {
+      const videoId = facade.getAttribute('data-video-id');
+      const title = facade.getAttribute('data-title') || 'Vídeo do YouTube';
+      if (!videoId) return;
 
-    if (iframe && tabs.length > 0) {
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          tabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          const videoId = tab.getAttribute('data-video-id');
-          if (videoId) {
-            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
-          }
-        });
-      });
-    }
+      const iframe = document.createElement('iframe');
+      iframe.className = 'game-video';
+      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+      iframe.title = title;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+
+      facade.replaceWith(iframe);
+    });
   });
 });

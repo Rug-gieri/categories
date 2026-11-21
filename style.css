@@ -167,7 +167,9 @@ body::before {
   overflow: hidden;
   box-shadow: var(--shadow-card);
   backdrop-filter: blur(12px);
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 450px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .game-card:hover {
@@ -224,7 +226,63 @@ body::before {
   aspect-ratio: 16 / 9;
   min-height: 200px;
   overflow: hidden;
-  background: #000;
+  background: #0f172a;
+}
+
+/* Otimização de Performance: Facade de Vídeo sob demanda */
+.video-facade {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facade-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.video-facade:hover .facade-thumb {
+  transform: scale(1.04);
+  filter: brightness(0.9);
+}
+
+.play-btn {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.play-btn svg {
+  width: 26px;
+  height: 26px;
+  margin-left: 3px; /* Centralizar opticamente o ícone de play */
+}
+
+.video-facade:hover .play-btn {
+  transform: scale(1.12);
+  background: #dc2626;
+  border-color: #dc2626;
+  box-shadow: 0 10px 28px rgba(220, 38, 38, 0.45);
 }
 
 .card-media iframe.game-video {
