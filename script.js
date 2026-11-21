@@ -176,4 +176,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 5. Auto Pause / Fechar ao mudar de Reel (IntersectionObserver)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const card = entry.target;
+      // Quando o card sai da tela (menos de 50% visível)
+      if (!entry.isIntersecting || entry.intersectionRatio < 0.5) {
+        if (card.classList.contains('playing')) {
+          const container = card.querySelector('.reel-video-container');
+          const iframe = container ? container.querySelector('iframe') : null;
+          
+          // Pausa o vídeo via postMessage
+          if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage(JSON.stringify({
+              event: 'command',
+              func: 'pauseVideo',
+              args: []
+            }), '*');
+          }
+
+          // Se preferir fechar o iframe completamente para economizar memória e bateria:
+          const playerId = container && container.firstElementChild ? container.firstElementChild.id : null;
+          if (playerId && players[playerId] && typeof players[playerId].pauseVideo === 'function') {
+            players[playerId].pauseVideo();
+          }
+        }
+      }
+    });
+  }, {
+    root: feed,
+    threshold: [0.2, 0.5, 0.8]
+  });
+
+  cards.forEach(card => observer.observe(card));
 });
