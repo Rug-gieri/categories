@@ -2,314 +2,440 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Top Jogos Favoritos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Top Jogos Favoritos | Reels Edition</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
-<body>
-  <!-- Header / Hero Mobile-First -->
-  <header class="hero">
-    <div class="glow-orb"></div>
-    <div class="container hero-content">
-      <h1 class="hero-title">Top Jogos Favoritos</h1>
-      <p class="hero-subtitle">top rápido jogões by Rug</p>
+<body class="reels-mode">
+
+  <!-- Header Superior Flutuante (Estilo TikTok / Instagram) -->
+  <header class="reels-top-nav">
+    <div class="top-nav-brand">
+      <span class="brand-title">Top Jogos</span>
+      <span class="brand-subtitle">by Rug</span>
     </div>
+    
+    <!-- Filtros em formato pílula horizontal compacta -->
+    <nav class="reels-chip-nav" aria-label="Filtro rápido">
+      <button class="reel-chip active" data-filter="all">Todos</button>
+      <button class="reel-chip" data-filter="cod">CoD</button>
+      <button class="reel-chip" data-filter="lol">LoL</button>
+      <button class="reel-chip" data-filter="short-hike">Hike</button>
+      <button class="reel-chip" data-filter="hyper-light">Hyper</button>
+      <button class="reel-chip" data-filter="terror">Terror</button>
+    </nav>
   </header>
 
-  <!-- Filtros / Categorias rápidas -->
-  <main class="container">
-    <nav class="quick-nav" aria-label="Atalhos de jogos">
-      <button class="nav-chip active" data-target="all">Todos</button>
-      <button class="nav-chip" data-target="cod">CoD MW4</button>
-      <button class="nav-chip" data-target="lol">League of Legends</button>
-      <button class="nav-chip" data-target="short-hike">A Short Hike</button>
-      <button class="nav-chip" data-target="hyper-light">Hyper Light Drifter</button>
-      <button class="nav-chip" data-target="terror">Terror</button>
-    </nav>
+  <!-- Feed Vertical Estilo Reels (Scroll Snap Mandatory) -->
+  <main class="reels-feed" id="reelsFeed">
 
-    <!-- Cards dos Jogos -->
-    <section class="games-grid" id="gamesList">
-      
-      <!-- Call of Duty: Modern Warfare 4 (2026) -->
-      <article class="game-card card-cod" data-game="cod">
-        <div class="card-rank">#1</div>
-        <div class="card-media">
-          <div class="video-facade" data-video-id="jLbst85USN8" data-title="Call of Duty: Modern Warfare 4 (2026) Official Reveal Trailer">
-            <img src="https://i.ytimg.com/vi/jLbst85USN8/hqdefault.jpg" alt="Call of Duty: Modern Warfare 4 Trailer" loading="lazy" class="facade-thumb">
-            <button type="button" class="play-btn" aria-label="Assistir trailer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-          </div>
-          <span class="tag tag-fps">FPS / Tático</span>
+    <!-- REEL #1: Call of Duty: Modern Warfare 4 (2026) -->
+    <section class="reel-card" data-category="cod" data-video-id="jLbst85USN8">
+      <div class="reel-media-box">
+        <img src="https://i.ytimg.com/vi/jLbst85USN8/hqdefault.jpg" alt="Call of Duty: Modern Warfare 4 (2026)" class="reel-bg-thumb" loading="eager">
+        <div class="reel-video-container"></div>
+        <div class="reel-gradient-overlay"></div>
+        <div class="play-indicator">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="platform">PC / Consoles</span>
-            <span class="rating">⭐ 9.8</span>
-          </div>
-          <h2 class="card-title">Call of Duty: Modern Warfare 4 (2026)</h2>
-          <p class="card-desc">sei que tem coisa melhor, mas é onde desestresso atualmente</p>
-          
-          <div class="highlights">
-            <div class="highlight-item">
-              <span class="highlight-label">Estilo</span>
-              <span class="highlight-val">Competitivo & Tático</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-label">Foco</span>
-              <span class="highlight-val">atirar</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- League of Legends -->
-      <article class="game-card card-lol" data-game="lol">
-        <div class="card-rank">#2</div>
-        <div class="card-media">
-          <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jhin_2.jpg" alt="League of Legends - Arte Jhin Lua Sangrenta" loading="lazy" class="game-img">
-          <div class="card-gradient"></div>
-          <span class="tag tag-moba">MOBA / Estratégia</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="platform">PC</span>
-            <span class="rating">⭐ 9.5</span>
-          </div>
-          <h2 class="card-title">League of Legends</h2>
-          <p class="card-desc">sem comentários</p>
-          
-          <div class="highlights">
-            <div class="highlight-item">
-              <span class="highlight-label">Estilo</span>
-              <span class="highlight-val">Tático & Teamplay</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-label">Sensação</span>
-              <span class="highlight-val">dependendo do boneco, parece que estou compondo</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- A Short Hike -->
-      <article class="game-card card-indie" data-game="short-hike">
-        <div class="card-rank">#3</div>
-        <div class="card-media">
-          <div class="video-facade" data-video-id="TM1Pcd-0qJg" data-title="A Short Hike - Official Trailer">
-            <img src="https://i.ytimg.com/vi/TM1Pcd-0qJg/hqdefault.jpg" alt="A Short Hike Trailer" loading="lazy" class="facade-thumb">
-            <button type="button" class="play-btn" aria-label="Assistir trailer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-          </div>
-          <span class="tag tag-retro">Indie / Aventura</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="platform">PC / Switch / Consoles</span>
-            <span class="rating">⭐ 10.0</span>
-          </div>
-          <h2 class="card-title">A Short Hike</h2>
-          <p class="card-desc">jogo lindo que guardo no meu coração pra sempre</p>
-          
-          <div class="highlights">
-            <div class="highlight-item">
-              <span class="highlight-label">Estilo</span>
-              <span class="highlight-val">Exploração Relaxante</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-label">Destaque</span>
-              <span class="highlight-val">chorar até dizer chega, mas tem pescaria e tem como voar também</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Hyper Light Drifter -->
-      <article class="game-card card-hyper" data-game="hyper-light">
-        <div class="card-rank">#4</div>
-        <div class="card-media">
-          <div class="video-facade" data-video-id="nWufEJ1Ava0" data-title="Hyper Light Drifter - Official Trailer">
-            <img src="https://i.ytimg.com/vi/nWufEJ1Ava0/hqdefault.jpg" alt="Hyper Light Drifter Trailer" loading="lazy" class="facade-thumb">
-            <button type="button" class="play-btn" aria-label="Assistir trailer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-          </div>
-          <span class="tag tag-action">Action RPG / Indie</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="platform">PC / Switch / Consoles</span>
-            <span class="rating">⭐ 9.9</span>
-          </div>
-          <h2 class="card-title">Hyper Light Drifter</h2>
-          <p class="card-desc">tenho um certo apego por já ter jogado há bastante tempo</p>
-          
-          <div class="highlights">
-            <div class="highlight-item">
-              <span class="highlight-label">Estilo</span>
-              <span class="highlight-val">Fast-paced Action RPG</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-label">Destaque</span>
-              <span class="highlight-val">tem graficos muito bonitinhos e história marcante sem dizer uma palavra</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- ==============================================
-           SEPARADOR DA CATEGORIA TERROR
-           ============================================== -->
-      <div class="category-divider" data-game="terror">
-        <h2 class="category-heading">Terror</h2>
       </div>
 
-      <!-- Resident Evil 7: Biohazard -->
-      <article class="game-card card-terror" data-game="terror">
-        <div class="card-rank">#5</div>
-        <div class="card-media">
-          <div class="video-facade" data-video-id="viyqPAziAaw" data-title="Resident Evil 7: Biohazard - Trailer Oficial">
-            <img src="https://i.ytimg.com/vi/viyqPAziAaw/hqdefault.jpg" alt="Resident Evil 7 Trailer" loading="lazy" class="facade-thumb">
-            <button type="button" class="play-btn" aria-label="Assistir trailer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
+      <!-- Barra de Ações Lateral Direita -->
+      <aside class="reel-actions">
+        <button class="action-btn like-btn" aria-label="Curtir">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
-          <span class="tag tag-terror">Survival Horror</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="platform">PC / Consoles</span>
-            <span class="rating">⭐ 9.6</span>
+          <span class="action-count">9.8k</span>
+        </button>
+        <button class="action-btn sound-btn" aria-label="Som">
+          <div class="action-icon">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
           </div>
-          <h2 class="card-title">Resident Evil 7: Biohazard</h2>
-          <p class="card-desc">história boa, terror bom, tudo bom,</p>
-          
-          <div class="highlights">
-            <div class="highlight-item">
-              <span class="highlight-label">Estilo</span>
-              <span class="highlight-val">Terror em 1ª Pessoa</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-label">Sensação</span>
-              <span class="highlight-val">Tensão Claustrofóbica</span>
-            </div>
+          <span class="action-label">Trailer</span>
+        </button>
+        <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="action-btn share-btn" aria-label="WhatsApp">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
           </div>
-        </div>
-      </article>
+          <span class="action-label">Chat</span>
+        </a>
+      </aside>
 
-      <!-- Resident Evil Village (8) -->
-      <article class="game-card card-terror" data-game="terror">
-        <div class="card-rank">#6</div>
-        <div class="card-media">
-          <div class="video-facade" data-video-id="dRpXEc-EJow" data-title="Resident Evil Village (8) - Trailer Oficial">
-            <img src="https://i.ytimg.com/vi/dRpXEc-EJow/hqdefault.jpg" alt="Resident Evil Village Trailer" loading="lazy" class="facade-thumb">
-            <button type="button" class="play-btn" aria-label="Assistir trailer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-          </div>
-          <span class="tag tag-terror">Horror Gótico</span>
+      <!-- Informações Inferiores (Sobreposição) -->
+      <div class="reel-caption">
+        <div class="caption-tag-row">
+          <span class="reel-rank">#1</span>
+          <span class="reel-tag tag-cod">FPS / Tático</span>
+          <span class="reel-rating">⭐ 9.8</span>
         </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="platform">PC / Consoles</span>
-            <span class="rating">⭐ 9.5</span>
-          </div>
-          <h2 class="card-title">Resident Evil Village (8)</h2>
-          <p class="card-desc">o mesmo do 7</p>
-          
-          <div class="highlights">
-            <div class="highlight-item">
-              <span class="highlight-label">Estilo</span>
-              <span class="highlight-val">Ação & Horror Gótico</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-label">Destaque</span>
-              <span class="highlight-val">Castelo Dimitrescu & Beneviento</span>
-            </div>
-          </div>
+        <h2 class="reel-title">Call of Duty: Modern Warfare 4 (2026)</h2>
+        <p class="reel-desc">sei que tem coisa melhor, mas é onde desestresso atualmente</p>
+        <div class="reel-pills">
+          <span class="pill">🎯 Foco: atirar</span>
+          <span class="pill">⚔️ Competitivo & Tático</span>
         </div>
-      </article>
-
-      <!-- Dead Space II -->
-      <article class="game-card card-terror" data-game="terror">
-        <div class="card-rank">#7</div>
-        <div class="card-media">
-          <div class="video-facade" data-video-id="78nh3xFwAEU" data-title="Dead Space 2 - Trailer Oficial">
-            <img src="https://i.ytimg.com/vi/78nh3xFwAEU/hqdefault.jpg" alt="Dead Space 2 Trailer" loading="lazy" class="facade-thumb">
-            <button type="button" class="play-btn" aria-label="Assistir trailer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-          </div>
-          <span class="tag tag-terror">Sci-Fi Horror</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="platform">PC / Consoles</span>
-            <span class="rating">⭐ 9.8</span>
-          </div>
-          <h2 class="card-title">Dead Space II</h2>
-          <p class="card-desc">cinema em relação a jogos de terror</p>
-          
-          <div class="highlights">
-            <div class="highlight-item">
-              <span class="highlight-label">Estilo</span>
-              <span class="highlight-val">Terror Espacial & Ação</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-label">Momento</span>
-              <span class="highlight-val">A agulha no olho & Necromorphs</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Layers of Fear 2 -->
-      <article class="game-card card-terror" data-game="terror">
-        <div class="card-rank">#8</div>
-        <div class="card-media">
-          <div class="video-facade" data-video-id="UeMtj6CuXPE" data-title="Layers of Fear 2 - Trailer Oficial">
-            <img src="https://i.ytimg.com/vi/UeMtj6CuXPE/hqdefault.jpg" alt="Layers of Fear 2 Trailer" loading="lazy" class="facade-thumb">
-            <button type="button" class="play-btn" aria-label="Assistir trailer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-          </div>
-          <span class="tag tag-terror">Terror Psicológico</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="platform">PC / Consoles</span>
-            <span class="rating">⭐ 9.0</span>
-          </div>
-          <h2 class="card-title">Layers of Fear 2</h2>
-          <p class="card-desc">cinema com arte com terror</p>
-          
-          <div class="highlights">
-            <div class="highlight-item">
-              <span class="highlight-label">Estilo</span>
-              <span class="highlight-val">Terror Psicológico</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-label">Destaque</span>
-              <span class="highlight-val">transições muito boas</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
+      </div>
     </section>
-  </main>
 
-  <footer class="footer">
-    <p>sim eu não tinha muito o que fazer</p>
-    <p class="entertainment-cta">
-      procurando uma categoria de Filmes, séries e animes? 
-      <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="whatsapp-link">Clique aqui</a>
-    </p>
-  </footer>
+    <!-- REEL #2: League of Legends -->
+    <section class="reel-card" data-category="lol" data-video-id="D4L0OkSrsI8">
+      <div class="reel-media-box">
+        <img src="https://i.ytimg.com/vi/D4L0OkSrsI8/hqdefault.jpg" alt="League of Legends - Yone Florescer Espiritual (Kin of the Stained Blade)" class="reel-bg-thumb" loading="lazy">
+        <div class="reel-video-container"></div>
+        <div class="reel-gradient-overlay"></div>
+        <div class="play-indicator">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <aside class="reel-actions">
+        <button class="action-btn like-btn" aria-label="Curtir">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="action-count">9.5k</span>
+        </button>
+        <button class="action-btn sound-btn" aria-label="Som">
+          <div class="action-icon">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          </div>
+          <span class="action-label">Trailer</span>
+        </button>
+        <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="action-btn share-btn" aria-label="WhatsApp">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+          </div>
+          <span class="action-label">Chat</span>
+        </a>
+      </aside>
+
+      <div class="reel-caption">
+        <div class="caption-tag-row">
+          <span class="reel-rank">#2</span>
+          <span class="reel-tag tag-lol">MOBA / Estratégia</span>
+          <span class="reel-rating">⭐ 9.5</span>
+        </div>
+        <h2 class="reel-title">League of Legends</h2>
+        <p class="reel-desc">sem comentários</p>
+        <div class="reel-pills">
+          <span class="pill">🌸 Yone Florescer Espiritual</span>
+          <span class="pill">🎼 dependendo do boneco, parece que estou compondo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REEL #3: A Short Hike -->
+    <section class="reel-card" data-category="short-hike" data-video-id="TM1Pcd-0qJg">
+      <div class="reel-media-box">
+        <img src="https://i.ytimg.com/vi/TM1Pcd-0qJg/hqdefault.jpg" alt="A Short Hike" class="reel-bg-thumb" loading="lazy">
+        <div class="reel-video-container"></div>
+        <div class="reel-gradient-overlay"></div>
+        <div class="play-indicator">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <aside class="reel-actions">
+        <button class="action-btn like-btn" aria-label="Curtir">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="action-count">10.0k</span>
+        </button>
+        <button class="action-btn sound-btn" aria-label="Som">
+          <div class="action-icon">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          </div>
+          <span class="action-label">Trailer</span>
+        </button>
+        <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="action-btn share-btn" aria-label="WhatsApp">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+          </div>
+          <span class="action-label">Chat</span>
+        </a>
+      </aside>
+
+      <div class="reel-caption">
+        <div class="caption-tag-row">
+          <span class="reel-rank">#3</span>
+          <span class="reel-tag tag-indie">Indie / Aventura</span>
+          <span class="reel-rating">⭐ 10.0</span>
+        </div>
+        <h2 class="reel-title">A Short Hike</h2>
+        <p class="reel-desc">jogo lindo que guardo no meu coração pra sempre</p>
+        <div class="reel-pills">
+          <span class="pill">🍃 chorar até dizer chega, mas tem pescaria e tem como voar também</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REEL #4: Hyper Light Drifter -->
+    <section class="reel-card" data-category="hyper-light" data-video-id="nWufEJ1Ava0">
+      <div class="reel-media-box">
+        <img src="https://i.ytimg.com/vi/nWufEJ1Ava0/hqdefault.jpg" alt="Hyper Light Drifter" class="reel-bg-thumb" loading="lazy">
+        <div class="reel-video-container"></div>
+        <div class="reel-gradient-overlay"></div>
+        <div class="play-indicator">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <aside class="reel-actions">
+        <button class="action-btn like-btn" aria-label="Curtir">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="action-count">9.9k</span>
+        </button>
+        <button class="action-btn sound-btn" aria-label="Som">
+          <div class="action-icon">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          </div>
+          <span class="action-label">Trailer</span>
+        </button>
+        <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="action-btn share-btn" aria-label="WhatsApp">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+          </div>
+          <span class="action-label">Chat</span>
+        </a>
+      </aside>
+
+      <div class="reel-caption">
+        <div class="caption-tag-row">
+          <span class="reel-rank">#4</span>
+          <span class="reel-tag tag-hyper">Action RPG</span>
+          <span class="reel-rating">⭐ 9.9</span>
+        </div>
+        <h2 class="reel-title">Hyper Light Drifter</h2>
+        <p class="reel-desc">tenho um certo apego por já ter jogado há bastante tempo</p>
+        <div class="reel-pills">
+          <span class="pill">🎨 tem graficos muito bonitinhos e história marcante sem dizer uma palavra</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REEL #5: Resident Evil 7: Biohazard -->
+    <section class="reel-card" data-category="terror" data-video-id="viyqPAziAaw">
+      <div class="reel-media-box">
+        <img src="https://i.ytimg.com/vi/viyqPAziAaw/hqdefault.jpg" alt="Resident Evil 7" class="reel-bg-thumb" loading="lazy">
+        <div class="reel-video-container"></div>
+        <div class="reel-gradient-overlay"></div>
+        <div class="play-indicator">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <aside class="reel-actions">
+        <button class="action-btn like-btn" aria-label="Curtir">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="action-count">9.6k</span>
+        </button>
+        <button class="action-btn sound-btn" aria-label="Som">
+          <div class="action-icon">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          </div>
+          <span class="action-label">Trailer</span>
+        </button>
+        <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="action-btn share-btn" aria-label="WhatsApp">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+          </div>
+          <span class="action-label">Chat</span>
+        </a>
+      </aside>
+
+      <div class="reel-caption">
+        <div class="caption-tag-row">
+          <span class="reel-rank">#5</span>
+          <span class="reel-tag tag-terror">Terror</span>
+          <span class="reel-rating">⭐ 9.6</span>
+        </div>
+        <h2 class="reel-title">Resident Evil 7: Biohazard</h2>
+        <p class="reel-desc">história boa, terror bom, tudo bom,</p>
+        <div class="reel-pills">
+          <span class="pill">🕯️ Tensão Claustrofóbica</span>
+          <span class="pill">Dulvey, Louisiana</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REEL #6: Resident Evil Village (8) -->
+    <section class="reel-card" data-category="terror" data-video-id="dRpXEc-EJow">
+      <div class="reel-media-box">
+        <img src="https://i.ytimg.com/vi/dRpXEc-EJow/hqdefault.jpg" alt="Resident Evil Village (8)" class="reel-bg-thumb" loading="lazy">
+        <div class="reel-video-container"></div>
+        <div class="reel-gradient-overlay"></div>
+        <div class="play-indicator">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <aside class="reel-actions">
+        <button class="action-btn like-btn" aria-label="Curtir">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="action-count">9.5k</span>
+        </button>
+        <button class="action-btn sound-btn" aria-label="Som">
+          <div class="action-icon">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          </div>
+          <span class="action-label">Trailer</span>
+        </button>
+        <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="action-btn share-btn" aria-label="WhatsApp">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+          </div>
+          <span class="action-label">Chat</span>
+        </a>
+      </aside>
+
+      <div class="reel-caption">
+        <div class="caption-tag-row">
+          <span class="reel-rank">#6</span>
+          <span class="reel-tag tag-terror">Terror</span>
+          <span class="reel-rating">⭐ 9.5</span>
+        </div>
+        <h2 class="reel-title">Resident Evil Village (8)</h2>
+        <p class="reel-desc">o mesmo do 7</p>
+        <div class="reel-pills">
+          <span class="pill">🏰 Castelo Dimitrescu</span>
+          <span class="pill">Horror Gótico</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REEL #7: Dead Space II -->
+    <section class="reel-card" data-category="terror" data-video-id="CMo2xhbvNb4">
+      <div class="reel-media-box">
+        <img src="https://i.ytimg.com/vi/CMo2xhbvNb4/hqdefault.jpg" alt="Dead Space 2" class="reel-bg-thumb" loading="lazy">
+        <div class="reel-video-container"></div>
+        <div class="reel-gradient-overlay"></div>
+        <div class="play-indicator">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <aside class="reel-actions">
+        <button class="action-btn like-btn" aria-label="Curtir">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="action-count">9.8k</span>
+        </button>
+        <button class="action-btn sound-btn" aria-label="Som">
+          <div class="action-icon">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          </div>
+          <span class="action-label">Trailer</span>
+        </button>
+        <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="action-btn share-btn" aria-label="WhatsApp">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+          </div>
+          <span class="action-label">Chat</span>
+        </a>
+      </aside>
+
+      <div class="reel-caption">
+        <div class="caption-tag-row">
+          <span class="reel-rank">#7</span>
+          <span class="reel-tag tag-terror">Terror</span>
+          <span class="reel-rating">⭐ 9.8</span>
+        </div>
+        <h2 class="reel-title">Dead Space II</h2>
+        <p class="reel-desc">cinema em relação a jogos de terror</p>
+        <div class="reel-pills">
+          <span class="pill">🚀 Sprawl & Necromorphs</span>
+          <span class="pill">Terror Espacial</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REEL #8: Layers of Fear 2 -->
+    <section class="reel-card" data-category="terror" data-video-id="UeMtj6CuXPE">
+      <div class="reel-media-box">
+        <img src="https://i.ytimg.com/vi/UeMtj6CuXPE/hqdefault.jpg" alt="Layers of Fear 2" class="reel-bg-thumb" loading="lazy">
+        <div class="reel-video-container"></div>
+        <div class="reel-gradient-overlay"></div>
+        <div class="play-indicator">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <aside class="reel-actions">
+        <button class="action-btn like-btn" aria-label="Curtir">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="action-count">9.0k</span>
+        </button>
+        <button class="action-btn sound-btn" aria-label="Som">
+          <div class="action-icon">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          </div>
+          <span class="action-label">Trailer</span>
+        </button>
+        <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="action-btn share-btn" aria-label="WhatsApp">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+          </div>
+          <span class="action-label">Chat</span>
+        </a>
+      </aside>
+
+      <div class="reel-caption">
+        <div class="caption-tag-row">
+          <span class="reel-rank">#8</span>
+          <span class="reel-tag tag-terror">Terror</span>
+          <span class="reel-rating">⭐ 9.0</span>
+        </div>
+        <h2 class="reel-title">Layers of Fear 2</h2>
+        <p class="reel-desc">cinema com arte com terror</p>
+        <div class="reel-pills">
+          <span class="pill">🎬 transições muito boas</span>
+          <span class="pill">Transatlântico</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REEL FINAL: Perfil Autor & CTA WhatsApp (End Card) -->
+    <section class="reel-card reel-end-card" data-category="all">
+      <div class="end-card-content">
+        <h3 class="end-quote">"sim eu não tinha muito o que fazer"</h3>
+
+        <div class="author-profile">
+          <a href="https://github.com/Rug-gieri" target="_blank" rel="noopener noreferrer" class="author-card">
+            <img src="https://avatars.githubusercontent.com/u/182928009?v=4" alt="Foto de Rug-gieri no GitHub" class="author-avatar" loading="lazy">
+            <div class="author-info">
+              <span class="author-name">Rug-gieri</span>
+              <span class="author-tag">github.com/Rug-gieri</span>
+            </div>
+          </a>
+        </div>
+
+        <p class="entertainment-cta">
+          procurando uma categoria de Filmes, séries e animes? 
+          <a href="https://wa.me/556992418704?text=oi%20%C3%A9%20aqui%20%C3%A9%20a%20curadoria%20especial%20de%20entreterimento%3F" target="_blank" rel="noopener noreferrer" class="whatsapp-link">Clique aqui</a>
+        </p>
+
+        <button class="back-to-top-btn" id="backToTopBtn">
+          ↑ Voltar ao início
+        </button>
+      </div>
+    </section>
+
+  </main>
 
   <script src="script.js"></script>
 </body>
